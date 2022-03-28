@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl="http://usermanagementservice-env.eba-bemy6h3p.us-west-2.elasticbeanstalk.com";
+  private baseUrl="http://ec2-54-202-96-108.us-west-2.compute.amazonaws.com:8080";
   constructor(private http:HttpClient) { }
   //generate token
   public generateToken(loginData:any){
