@@ -1,0 +1,36 @@
+<h2> Laptop List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> SNo.</th>
+            <th> Laptop Name</th>
+          <!--  <th> Processor </th>
+            <th> Ram Size(in GB's)</th>
+            <th> OS </th>
+            <th> Storage Type </th>
+            <th> Storage Size </th> -->
+            <th> Vendor Name </th>
+            <th> Price(in INR) </th>
+            <th> Actions </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let laptop of laptops" >
+            <td>{{laptops.indexOf(laptop) + 1}}</td>
+            <td> {{ laptop.name }} </td>
+           <!-- <td> {{ laptop.processor }} </td>
+            <td> {{ laptop.ram }} </td>
+            <td> {{ laptop.os }} </td>
+            <td> {{ laptop.storageType }} </td>
+            <td> {{ laptop.storageSize }} </td> -->
+            <td> {{ laptop.vendor.name }} </td>
+            <td> &#8377; {{ laptop.price }} </td>
+            <td>
+                <button (click) = "laptopDetails(laptop.id)" class = "btn btn-primary" > View</button>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click) = "goBack()" class = "btn btn-success" > Back</button>

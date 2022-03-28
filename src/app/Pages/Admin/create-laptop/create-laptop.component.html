@@ -1,0 +1,47 @@
+<h2 class="text-center">ADD LAPTOP</h2>
+<h6 style="color: #ff0000;"><strong>* Mandatory Fields</strong></h6>
+
+<form  (ngSubmit)="onSubmit()">
+    
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Laptop Name <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="laptop.name" class="form-control" id="formGroupExampleInput" name="name" placeholder="Enter Laptop Name" required>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Processor <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="laptop.processor" class="form-control"  name="rating" id="formGroupExampleInput2" placeholder="Enter Processor Details" required>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Ram Size(in GB's) <span style="color:#ff0000">*</span></label>
+    <input type="number" [(ngModel)]="laptop.ram" class="form-control" name="address" id="formGroupExampleInput2" placeholder="Enter Ram Size in Gb's" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">OS <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="laptop.os" class="form-control" name="contact" id="formGroupExampleInput2" placeholder="Enter OS Name" required>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Storage Type <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="laptop.storageType" class="form-control" name="contact" id="formGroupExampleInput2" placeholder="Enter type of storage" required>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Storage Size <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="laptop.storageSize" class="form-control" name="contact" id="formGroupExampleInput2" placeholder="Enter storage size" required>
+  </div> 
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">price <span style="color:#ff0000">*</span></label>
+    <input type="number" [(ngModel)]="laptop.price" class="form-control" name="contact" id="formGroupExampleInput2" placeholder="Enter Laptop's Price" required>
+  </div>
+
+ <div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label">Select Vendor: <span style="color:#ff0000">*</span></label>
+    <select class="btn btn-primary dropdown-toggle" name="selectVendorName" id="selectVendorId" [(ngModel)]='vendorId' required>
+        <option value="default">Select Vendor</option>
+        <option *ngFor="let vendor of vendors" [ngValue]="vendor.id">{{vendor.name}}</option>
+    </select>
+</div>
+
+
+  <button class="btn btn-primary"  type="submit">Add Laptop</button> &nbsp;
+  <button class="btn btn-success" (click)="goBack()" type="button">Back</button>
+</form>

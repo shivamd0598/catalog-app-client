@@ -1,0 +1,26 @@
+<h2> Vendor List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>SNo.</th>
+            <th> Vendor Name</th>
+            <th> Rating </th>
+            <th> Address </th>
+            <th> Contact No. </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let vendor of vendors" >
+            <td>{{vendors.indexOf(vendor) + 1}}</td>
+            <td> {{ vendor.name }} </td>
+            <td> {{ vendor.rating }} </td>
+            <td> {{ vendor.address }} </td>
+            <td> {{ vendor.contactNo }} </td>
+            <td>
+                <button (click) = "vendorDetails(vendor.id)" class = "btn btn-primary"> View</button>         
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click) = "goBack()" class = "btn btn-success" > Back</button>

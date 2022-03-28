@@ -1,0 +1,25 @@
+<h2 class="text-center">UPDATE VENDOR</h2>
+<h6 style="color: #ff0000;"><strong>* Mandatory Fields</strong></h6>
+
+<form (ngSubmit)="onSubmit()">
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Vendor Name <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="vendor.name" class="form-control" id="formGroupExampleInput" name="name" placeholder="Enter Vendor Name" required>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Rating <span style="color:#ff0000">*</span></label>
+    <input type="number" step="0.1" [(ngModel)]="vendor.rating" class="form-control"  name="rating" id="formGroupExampleInput2" placeholder="Enter Vendor Rating" required>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Address <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="vendor.address" class="form-control" name="address" id="formGroupExampleInput2" placeholder="Enter Vendor Address" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Contact No. <span style="color:#ff0000">*</span></label>
+    <input type="text" [(ngModel)]="vendor.contactNo" class="form-control" name="contact" id="formGroupExampleInput2" placeholder="Enter Vendor Contact No." required>
+  </div>
+
+  <button class="btn btn-primary"  type="submit">Update Vendor</button> &nbsp;
+  <button class="btn btn-success" (click)="goBack()" type="button">Back</button>
+</form>

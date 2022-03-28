@@ -1,0 +1,25 @@
+<h3> View Laptop Details</h3>
+<div>
+    <div>
+        <label> <b> Name: </b></label> {{laptop.name}}
+    </div>
+    <div>
+        <label> <b> Processor: </b></label> {{laptop.processor}}
+    </div>
+    <div>
+        <label> <b> Ram: </b></label> {{laptop.ram}}
+    </div>
+    <div>
+        <label> <b> Storage Type: </b></label> {{laptop.storageType}}
+    </div>
+    <div>
+        <label> <b> Storage Size: </b></label> {{laptop.storageSize}}
+    </div>
+    <div>
+        <label> <b> Price: </b></label> &#8377; {{laptop.price}}
+    </div>
+    <div>
+        <label> <b> Vendor: </b></label> {{laptop.vendor.name}}
+    </div>
+    <button class="btn btn-success" (click)="goBack()" type="button">Back</button>
+</div>

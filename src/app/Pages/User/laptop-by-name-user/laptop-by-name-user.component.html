@@ -1,0 +1,53 @@
+<h2 class="text-center">SEARCH BY LAPTOP NAME</h2>
+
+<form  (ngSubmit)="onSubmit()">
+    
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Laptop Name</label>
+    <input type="text" [(ngModel)]="laptopName" class="form-control" id="formGroupExampleInput" name="name" placeholder="Enter Laptop Name" required>
+    &nbsp; <button class="btn btn-primary"  type="submit">Search</button> &nbsp;
+    <button class="btn btn-success" (click)="goBack()" type="button">Back</button>  
+</div>
+</form>
+<div *ngIf="!(laptops?.length > 0) && isFormSubmitted">
+    <h2 style="color: red;text-align: center; font-weight: bold;">No Laptops Found!!!</h2>    
+</div>
+
+<div *ngIf="laptops?.length > 0">
+<h2> Laptop List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> SNo.</th>
+            <th> Laptop Name</th>
+          <!--  <th> Processor </th>
+            <th> Ram Size(in GB's)</th>
+            <th> OS </th>
+            <th> Storage Type </th>
+            <th> Storage Size </th> -->
+            <th> Vendor Name </th>
+            <th> Price(in INR) </th>
+            <th> Actions </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let laptop of laptops" >
+            <td>{{laptops.indexOf(laptop) + 1}}</td>
+            <td> {{ laptop.name }} </td>
+           <!-- <td> {{ laptop.processor }} </td>
+            <td> {{ laptop.ram }} </td>
+            <td> {{ laptop.os }} </td>
+            <td> {{ laptop.storageType }} </td>
+            <td> {{ laptop.storageSize }} </td> -->
+            <td> {{ laptop.vendor.name }} </td>
+            <td> &#8377; {{ laptop.price }} </td>
+            <td>
+                <button (click) = "laptopDetails(laptop.id)" class = "btn btn-success" > View</button>
+             
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

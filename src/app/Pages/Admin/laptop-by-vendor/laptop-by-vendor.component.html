@@ -1,0 +1,47 @@
+<h2 class="text-center">SEARCH LAPTOP BY VENDOR</h2>
+
+<form  (ngSubmit)="onSubmit()">
+    
+
+ <div class="mb-3">
+    <select class="btn btn-primary dropdown-toggle" name="selectVendorName" id="selectVendorId" [(ngModel)]='vendorId' >
+        <option value="default">Select Vendor</option>
+        <option *ngFor="let vendor of vendors" [ngValue]="vendor.id">{{vendor.name}}</option>
+    </select> &nbsp;
+    <button class="btn btn-primary"  type="submit">Search</button> &nbsp;
+</div>
+  <button class="btn btn-success" (click)="goBack()" type="button">Back</button>
+
+</form>
+<div *ngIf="!(laptops?.length > 0) && isFormSubmitted">
+    <h2 style="color: red;text-align: center; font-weight: bold;">No Laptops Found!!!</h2>    
+</div>
+<div *ngIf="laptops?.length > 0">
+<h2> Laptop List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> SNo.</th> 
+            <th> Laptop Name</th>
+            <th> Vendor Name </th>
+            <th> Price(in INR) </th>
+            <th> Actions </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let laptop of laptops" >
+            <td>{{laptops.indexOf(laptop) + 1}}</td>
+            <td> {{ laptop.name }} </td>
+            <td> {{ laptop.vendor.name }} </td>
+            <td> &#8377; {{ laptop.price }} </td>
+            <td>
+                <button (click) = "laptopDetails(laptop.id)" class = "btn btn-success" > View</button>
+                <button (click) = "updateLaptop(laptop.id)" class = "btn btn-info" style="margin-left: 10px"> Update</button>
+                <button (click) = "deleteLaptop(laptop.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
